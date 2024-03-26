@@ -1,0 +1,25 @@
+{
+  "topic": "Java back-end course",
+  "date": "2024-03-25",
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "code/part1/Car.java",
+    "code/part1/CarApp.java",
+    "code/part1/CarAppWithRunnable.java",
+    "code/part1/CarWithRunnable.java",
+    "code/part1/MyRunnable.java",
+    "code/part1/MyRunnableDemo.java",
+    "code/part1/MySecondThread.java",
+    "code/part1/MySecondDemo.java",
+    "code/part1/ThreadExample1.java",
+    "code/part1/ThreadExample1Demo.java",
+    "code/part1/ThreadExampleWithLambda.java",
+    "code/part2/Counter.java",
+    "code/part2/CounterThread.java",
+    "code/part2/CounterDemo.java",
+    "code/part3/Car.java",
+    "code/part3/DaemonApp.java"
+  ]
+}
