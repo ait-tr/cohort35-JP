@@ -1,0 +1,18 @@
+DRY - Don't repeat yourself - не повторяйся
+
+SSOT - single source of truth
+
+
+KISS - Keep it simple, stupid
+       Keep it stupid simple
+
+
+SOLID
+- single responsibility principle (SRP)
+- open-close principle
+- Liskov substitution principle (LSP)
+- interface segregation principle
+- dependency inversion principle
+
+YAGNI
+
