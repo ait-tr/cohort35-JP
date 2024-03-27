@@ -2,12 +2,11 @@ package lesson_02.code.concurrent.collections;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class CollectionExample {
     public static void main(String[] args) throws InterruptedException {
         int numberOfThreads = 100;
-        int numberOfElements = 1_000_000;
+        int numberOfElements = 1000000;
 
         List<Integer> myArrayList = new ArrayList<>();
 
