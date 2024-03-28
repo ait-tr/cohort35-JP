@@ -2,7 +2,15 @@
   "plan": "plan.md",
   "theory": "theory.md",
   "code": [
-    "code/ExampleModule/src/ExampleClassModule1.java",
-    "code/ExampleModule/src/example_package/ExamplePackageClassModule1.java"
+    "consultation_01/code/dto/RequestDto.java",
+    "consultation_01/code/dto/ResponseDto.java",
+    "consultation_01/code/entity/Task.java",
+    "consultation_01/code/repository/TaskRepository.java",
+    "consultation_01/code/repository/TaskRepositoryImpl.java",
+    "consultation_01/code/service/validation/ValidationService.java",
+    "consultation_01/code/service/AddTaskService.java",
+    "consultation_01/code/ui/UI.java",
+    "consultation_01/code/TaskApp.java",
+    "consultation_01/code/TaskDescription.txt"
   ]
 }
