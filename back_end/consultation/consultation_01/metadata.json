@@ -2,15 +2,15 @@
   "plan": "plan.md",
   "theory": "theory.md",
   "code": [
-    "consultation_01/code/dto/RequestDto.java",
-    "consultation_01/code/dto/ResponseDto.java",
-    "consultation_01/code/entity/Task.java",
-    "consultation_01/code/repository/TaskRepository.java",
-    "consultation_01/code/repository/TaskRepositoryImpl.java",
-    "consultation_01/code/service/validation/ValidationService.java",
-    "consultation_01/code/service/AddTaskService.java",
-    "consultation_01/code/ui/UI.java",
-    "consultation_01/code/TaskApp.java",
-    "consultation_01/code/TaskDescription.txt"
+    "back_end/consultation/consultation_01/code/dto/RequestDto.java",
+    "back_end/consultation/consultation_01/code/dto/ResponseDto.java",
+    "back_end/consultation/consultation_01/code/entity/Task.java",
+    "back_end/consultation/consultation_01/code/repository/TaskRepository.java",
+    "back_end/consultation/consultation_01/code/repository/TaskRepositoryImpl.java",
+    "back_end/consultation/consultation_01/code/service/validation/ValidationService.java",
+    "back_end/consultation/consultation_01/code/service/AddTaskService.java",
+    "back_end/consultation/consultation_01/code/ui/UI.java",
+    "back_end/consultation/consultation_01/code/TaskApp.java",
+    "back_end/consultation/consultation_01/code/TaskDescription.txt"
   ]
 }
