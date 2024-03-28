@@ -36,3 +36,7 @@ public String weekday2(int day) {
 
     return days[day - 1];
 }
+
+ДЗ!!!
+
+ПЕРЕПИСАТЬ ЭТОТ МЕТОД С ПОМОЩЬЮ ENUM
