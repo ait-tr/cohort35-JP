@@ -1,4 +1,4 @@
-package lesson_04.code.annotation;
+package lesson_04.code.annotation.example1;
 
 public class Child extends Parent {
 
