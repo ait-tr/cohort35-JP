@@ -1,10 +1,10 @@
 package code.service;
 
-import code.app.dto.RequestDto;
-import code.app.dto.ResponseDto;
-import code.app.entity.Task;
-import code.app.repository.TaskRepository;
-import code.app.service.validation.ValidationService;
+import code.dto.RequestDto;
+import code.dto.ResponseDto;
+import code.entity.Task;
+import code.repository.TaskRepository;
+import code.service.validation.ValidationService;
 
 public class AddTaskService {
     private final TaskRepository taskRepository;

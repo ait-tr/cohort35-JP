@@ -1,23 +1,44 @@
 package code.app.service.validation;
 
 import code.app.dto.RequestDto;
+import code.app.service.validation.validationRules.CoreError;
+import code.app.service.validation.validationRules.ValidationRule;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class ValidationService {
 
-    public List<String> validate(RequestDto requestDto){
-        List<String> errors = new ArrayList<>();
+    private final List<ValidationRule> validationRules;
 
-        if (requestDto.getName() == null) {errors.add("Task name must be not null");}
-        if (requestDto.getName().length() < 3) {errors.add("Task name length must be greater than 3, but actual name length is " + requestDto.getName().length());}
-        if (requestDto.getName().length() > 15) {errors.add("Task name length must be less than 15, but actual name length is " + requestDto.getName().length());}
-        if (requestDto.getDescription().length() < 3) {errors.add("Task description length must be greater than 3, but actual description length is " + requestDto.getDescription().length());}
-        if (requestDto.getDescription().length() > 25) {errors.add("Task description length must be less than 25, but actual description length is " + requestDto.getDescription().length());}
+    public ValidationService(List<ValidationRule> validationRules) {
+        this.validationRules = validationRules;
+    }
 
-        return errors;
+    public List<CoreError> validate(RequestDto request){
+        List<CoreError> errors = new ArrayList<>();
 
+        if (request == null) {
+            errors.add(new CoreError("Task request must be not null"));
+            return errors;
+        }
+
+        return validationRules.stream()
+                .map(rule -> validate(rule, request))
+                .filter(Objects::nonNull)
+                .collect(Collectors.toList());
+    }
+
+    private CoreError validate(ValidationRule rule, RequestDto request){
+        try {
+            rule.validate(request);
+        } catch (ValidationException e){
+            return new CoreError(e.getMessage());
+        }
+
+        return null;
     }
 
 }

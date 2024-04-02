@@ -1,7 +1,7 @@
 package code.ui;
 
-import code.app.dto.RequestDto;
-import code.app.service.AddTaskService;
+import code.dto.RequestDto;
+import code.service.AddTaskService;
 
 import java.util.Scanner;
 

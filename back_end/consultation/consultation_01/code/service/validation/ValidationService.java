@@ -1,6 +1,6 @@
 package code.service.validation;
 
-import code.app.dto.RequestDto;
+import code.dto.RequestDto;
 
 import java.util.ArrayList;
 import java.util.List;

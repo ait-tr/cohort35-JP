@@ -6,6 +6,8 @@ import code.app.entity.Task;
 import code.app.repository.TaskRepository;
 import code.app.service.validation.ValidationService;
 
+import java.util.Optional;
+
 public class AddTaskService {
     private final TaskRepository taskRepository;
     private final ValidationService validationService;
@@ -15,7 +17,7 @@ public class AddTaskService {
         this.validationService = validationService;
     }
 
-    public ResponseDto<Task> addNewTask(RequestDto request){
+    public ResponseDto<Optional<Task>> addNewTask(RequestDto request){
         System.out.println("Received request: " + request);
         // валидация данных
 
@@ -23,9 +25,9 @@ public class AddTaskService {
 
         if (validationResult.isEmpty()) {
             Task addedTask = taskRepository.addNewTask(request);
-            return new ResponseDto<>(addedTask,validationResult);
+            return new ResponseDto<>(Optional.of(addedTask),validationResult);
         } else {
-            return new ResponseDto<>(new Task(0,"",""), validationResult);
+            return new ResponseDto<>(Optional.empty(), validationResult);
         }
 
     }

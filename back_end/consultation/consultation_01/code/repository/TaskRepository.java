@@ -1,7 +1,7 @@
 package code.repository;
 
-import code.app.dto.RequestDto;
-import code.app.entity.Task;
+import code.dto.RequestDto;
+import code.entity.Task;
 
 import java.util.List;
 

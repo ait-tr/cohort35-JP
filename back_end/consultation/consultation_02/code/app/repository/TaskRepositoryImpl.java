@@ -5,6 +5,8 @@ import code.app.entity.Task;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 
 public class TaskRepositoryImpl implements TaskRepository {
 
@@ -20,8 +22,10 @@ public class TaskRepositoryImpl implements TaskRepository {
     }
 
     @Override
-    public Task findById(Integer id) {
-        return null;
+    public Optional<Task> findById(Integer id) {
+        return tasks.stream()
+                .filter(task -> Objects.equals(task.getTaskId(), id))
+                .findFirst();
     }
 
     @Override
@@ -37,5 +41,10 @@ public class TaskRepositoryImpl implements TaskRepository {
     @Override
     public Task updateTask(Integer id, RequestDto request) {
         return null;
+    }
+
+    @Override
+    public List<Task> findAll() {
+        return tasks;
     }
 }

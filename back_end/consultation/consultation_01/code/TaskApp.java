@@ -1,10 +1,11 @@
 package code;
 
-import code.app.repository.TaskRepository;
-import code.app.repository.TaskRepositoryImpl;
-import code.app.service.AddTaskService;
-import code.app.service.validation.ValidationService;
-import code.app.ui.UI;
+import code.repository.TaskRepository;
+import code.repository.TaskRepositoryImpl;
+import code.service.AddTaskService;
+import code.service.validation.ValidationService;
+import code.ui.UI;
+
 
 public class TaskApp {
     public static void main(String[] args) {

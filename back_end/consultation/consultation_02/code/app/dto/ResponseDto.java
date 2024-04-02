@@ -1,12 +1,14 @@
 package code.app.dto;
 
+import code.app.service.validation.validationRules.CoreError;
+
 import java.util.List;
 
 public class ResponseDto<T> {
     private T result;
-    private List<String> errors;
+    private List<CoreError> errors;
 
-    public ResponseDto(T result, List<String> errors) {
+    public ResponseDto(T result, List<CoreError> errors) {
         this.result = result;
         this.errors = errors;
     }
@@ -15,7 +17,7 @@ public class ResponseDto<T> {
         return result;
     }
 
-    public List<String> getErrors() {
+    public List<CoreError> getErrors() {
         return errors;
     }
 

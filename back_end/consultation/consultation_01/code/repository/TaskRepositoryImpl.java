@@ -1,8 +1,8 @@
 package code.repository;
 
-import code.app.repository.TaskRepository;
-import code.app.dto.RequestDto;
-import code.app.entity.Task;
+import code.repository.TaskRepository;
+import code.dto.RequestDto;
+import code.entity.Task;
 
 import java.util.ArrayList;
 import java.util.List;
