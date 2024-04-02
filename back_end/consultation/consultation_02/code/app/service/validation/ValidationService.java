@@ -1,4 +1,4 @@
-package code.service.validation;
+package code.app.service.validation;
 
 import code.app.dto.RequestDto;
 

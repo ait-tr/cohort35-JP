@@ -1,4 +1,4 @@
-package code;
+package code.app;
 
 import code.app.repository.TaskRepository;
 import code.app.repository.TaskRepositoryImpl;

@@ -1,4 +1,4 @@
-package code.repository;
+package code.app.repository;
 
 import code.app.dto.RequestDto;
 import code.app.entity.Task;

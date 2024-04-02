@@ -1,4 +1,4 @@
-package code.ui;
+package code.app.ui;
 
 import code.app.dto.RequestDto;
 import code.app.service.AddTaskService;

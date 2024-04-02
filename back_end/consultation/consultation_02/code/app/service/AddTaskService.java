@@ -1,4 +1,4 @@
-package code.service;
+package code.app.service;
 
 import code.app.dto.RequestDto;
 import code.app.dto.ResponseDto;
