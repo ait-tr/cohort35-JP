@@ -1,10 +1,14 @@
 package org.javaConfig2;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 
+@Configuration
+//@ComponentScan("org.javaConfig2")
 public class AppConfig {
 
     @Bean
