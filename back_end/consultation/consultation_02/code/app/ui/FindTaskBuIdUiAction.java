@@ -1,15 +1,12 @@
 package code.app.ui;
 
-import code.app.dto.TaskDto;
-import code.app.service.FindAllTaskService;
 import code.app.service.FindTaskByIdService;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class FindTaskBuIdUiAction implements UIAction{
 
-    private final FindTaskByIdService findTaskByIdService;
+    private final code.app.service.FindTaskByIdService findTaskByIdService;
 
     public FindTaskBuIdUiAction(FindTaskByIdService findTaskByIdService) {
         this.findTaskByIdService = findTaskByIdService;

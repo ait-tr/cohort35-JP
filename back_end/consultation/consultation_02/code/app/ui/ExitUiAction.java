@@ -1,9 +1,5 @@
 package code.app.ui;
 
-import code.app.service.FindTaskByIdService;
-
-import java.util.Scanner;
-
 public class ExitUiAction implements UIAction{
 
 

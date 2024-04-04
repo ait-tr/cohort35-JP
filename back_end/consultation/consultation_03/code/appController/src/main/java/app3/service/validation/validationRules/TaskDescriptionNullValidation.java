@@ -1,7 +1,7 @@
-package code.app.service.validation.validationRules;
+package service.validation.validationRules;
 
-import code.app.dto.RequestDto;
-import code.app.service.validation.ValidationException;
+import dto.RequestDto;
+import service.validation.ValidationException;
 
 public class TaskDescriptionNullValidation implements ValidationRule {
     @Override

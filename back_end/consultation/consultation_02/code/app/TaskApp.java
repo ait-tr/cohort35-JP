@@ -1,11 +1,11 @@
 package code.app;
 
-import code.app.repository.TaskRepository;
 import code.app.repository.TaskRepositoryImpl;
+import code.app.service.validation.ValidationService;
+import code.app.repository.TaskRepository;
 import code.app.service.AddTaskService;
 import code.app.service.FindAllTaskService;
 import code.app.service.FindTaskByIdService;
-import code.app.service.validation.ValidationService;
 import code.app.service.validation.validationRules.*;
 import code.app.ui.*;
 
@@ -25,7 +25,7 @@ public class TaskApp {
         validationRules.add(new TaskDescriptionMaxLengthValidation());
 
         TaskRepository repository = new TaskRepositoryImpl();
-        ValidationService validationService = new ValidationService(validationRules);
+        code.app.service.validation.ValidationService validationService = new ValidationService(validationRules);
 
         AddTaskService addTaskService = new AddTaskService(repository,validationService);
         FindAllTaskService findAllTaskService = new FindAllTaskService(repository);

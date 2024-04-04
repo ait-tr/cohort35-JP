@@ -16,13 +16,13 @@ public class FindAllTaskService {
         this.repository = repository;
     }
 
-    public ResponseDto<List<TaskDto>> findAll(){
+    public code.app.dto.ResponseDto<List<code.app.dto.TaskDto>> findAll(){
 
-        List<Task> tasks = repository.findAll();
+        List<code.app.entity.Task> tasks = repository.findAll();
 
-        List<TaskDto> dtos = new ArrayList<>();
+        List<code.app.dto.TaskDto> dtos = new ArrayList<>();
 
-        List<CoreError> errors = new ArrayList<>();
+        List<code.app.service.validation.validationRules.CoreError> errors = new ArrayList<>();
 
         if (tasks.isEmpty()) {
             errors.add(new CoreError("Task database is empty"));
@@ -35,7 +35,7 @@ public class FindAllTaskService {
         return new ResponseDto<>(dtos,errors);
     }
 
-    private TaskDto converter(Task task) {
+    private code.app.dto.TaskDto converter(Task task) {
         return new TaskDto(task.getName(), task.getDescription());
     }
 }

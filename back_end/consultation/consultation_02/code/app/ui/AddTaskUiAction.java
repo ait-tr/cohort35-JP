@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class AddTaskUiAction implements UIAction{
 
-    private final AddTaskService addTaskService;
+    private final code.app.service.AddTaskService addTaskService;
 
     public AddTaskUiAction(AddTaskService addTaskService) {
         this.addTaskService = addTaskService;

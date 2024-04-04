@@ -1,16 +1,13 @@
 package code.app.ui;
 
-import code.app.dto.RequestDto;
 import code.app.dto.TaskDto;
-import code.app.service.AddTaskService;
 import code.app.service.FindAllTaskService;
 
 import java.util.List;
-import java.util.Scanner;
 
 public class FindAllTaskUiAction implements UIAction{
 
-    private final FindAllTaskService findAllTaskService;
+    private final code.app.service.FindAllTaskService findAllTaskService;
 
     public FindAllTaskUiAction(FindAllTaskService findAllTaskService) {
         this.findAllTaskService = findAllTaskService;
@@ -35,7 +32,7 @@ public class FindAllTaskUiAction implements UIAction{
         return "Find All Tasks";
     }
 
-    private void printData(List<TaskDto> dtos) {
+    private void printData(List<code.app.dto.TaskDto> dtos) {
         for (TaskDto taskDto : dtos){
             System.out.println(taskDto);
         }
