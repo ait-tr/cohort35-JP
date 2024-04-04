@@ -1,0 +1,79 @@
+
+Клиент - серверное взаимодействие
+
+Приложение для хранения информации о клиентах и их заказах
+
+Entity:
+
+- client - клиент
+- order - заказ
+- item - товар
+
+Клиентские запросы:
+
+HTTP- метод
+заголовок
+URI
+тело запроса
+
+Ресурсы: клиенты, заказы и товары
+
+
+Запросы отправляются на "конечные точки" - endpoints
+
+/clients - URI для ВСЕХ имеющихся клиентов
+/clients/12 - URI конкретного клиента а именно с ID=12
+
+/clients/3/orders - URI всех заказов для клиента с ID = 3
+/clients/3/orders/12 - URI заказа № 12 для клиента с ID = 3
+
+/clients/3/orders/12/items - URI список всех товаров из заказа № 12 для клиента № 3
+
+HTTP-метод
+
+Get, Post, Put, Delete (CRUD)
+
+Заголовки (MIME тип)
+
+- text - text/plain, text/css, text/html
+- image - image/png, image/jpeg, image/gif
+- audio
+- video
+- application - application/json
+
+Accept: application/json
+
+
+Тело запроса:
+
+пересылаемое клиентом сообщение на сервер
+
+POST запрос
+
+в теле передать JSON
+{
+"name" : "client1",
+"email" : "client1@gmail.com",
+"phone" : "+44 525656256"
+}
+
+Примеры итоговых запросов:
+
+GET /clients/23
+Accept: application/json, application/xml
+
+POST /clients
+{
+"name" : "client1",
+"email" : "client1@gmail.com",
+"phone" : "+44 525656256"
+}
+
+PUT /clients/1
+{
+"name" : "client1",
+"email" : "client1@mail.de",
+"phone" : "+49 36734673467"
+}
+
+DELETE /clients/1/orders/2
