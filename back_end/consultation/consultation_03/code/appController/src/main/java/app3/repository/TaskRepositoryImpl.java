@@ -2,12 +2,14 @@ package app3.repository;
 
 import app3.dto.RequestDto;
 import app3.entity.Task;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+@Repository
 public class TaskRepositoryImpl implements TaskRepository {
 
     private Integer taskIdCounter = 0;

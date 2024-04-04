@@ -5,9 +5,11 @@ import app3.dto.ResponseDto;
 import app3.entity.Task;
 import app3.repository.TaskRepository;
 import app3.service.validation.ValidationService;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class AddTaskService {
     private final TaskRepository taskRepository;
     private final ValidationService validationService;

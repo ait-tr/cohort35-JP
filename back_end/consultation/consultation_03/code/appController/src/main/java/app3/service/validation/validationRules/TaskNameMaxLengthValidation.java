@@ -2,7 +2,9 @@ package app3.service.validation.validationRules;
 
 import app3.dto.RequestDto;
 import app3.service.validation.ValidationException;
+import org.springframework.stereotype.Component;
 
+@Component
 public class TaskNameMaxLengthValidation implements ValidationRule {
     @Override
     public void validate(RequestDto request) {

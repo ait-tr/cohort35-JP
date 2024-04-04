@@ -6,10 +6,12 @@ import app3.dto.TaskDto;
 import app3.entity.Task;
 import app3.repository.TaskRepository;
 import app3.service.validation.validationRules.CoreError;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class FindAllTaskService {
     private TaskRepository repository;
 
