@@ -1,6 +1,7 @@
 package app3.repository;
 
 import app3.dto.RequestDto;
+import app3.dto.UpdateTaskRequest;
 import app3.entity.Task;
 
 import java.util.List;
@@ -16,7 +17,7 @@ public interface TaskRepository {
 
     Boolean deleteById(Integer id);
 
-    Task updateTask(Integer id, RequestDto request);
+    Task updateTask(UpdateTaskRequest request);
 
     List<Task> findAll();
 }

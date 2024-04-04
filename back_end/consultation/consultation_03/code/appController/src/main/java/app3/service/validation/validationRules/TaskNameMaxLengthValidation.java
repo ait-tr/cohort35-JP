@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class TaskNameMaxLengthValidation implements ValidationRule {
     @Override
     public void validate(RequestDto request) {
-        if (request.getName() == null) {
+        if (request.getName().length() > 15) {
             throw new ValidationException("Task name length must be less than 15, but actual name length is " + request.getName().length());
         }
 

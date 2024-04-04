@@ -1,6 +1,7 @@
 package app3.repository;
 
 import app3.dto.RequestDto;
+import app3.dto.UpdateTaskRequest;
 import app3.entity.Task;
 import org.springframework.stereotype.Repository;
 
@@ -41,8 +42,16 @@ public class TaskRepositoryImpl implements TaskRepository {
     }
 
     @Override
-    public Task updateTask(Integer id, RequestDto request) {
-        return null;
+    public Task updateTask(UpdateTaskRequest request) {
+        for (int i = 0; i < tasks.size(); i++) {
+            var existingTask = tasks.get(i);
+            if (existingTask.getTaskId().equals(request.getId())) {
+                Task updatedTask = new Task(request.getId(), request.getName(), request.getDescription());
+                tasks.set(i, updatedTask);
+                return updatedTask;
+            }
+        }
+       throw new IllegalStateException("Failed to update");
     }
 
     @Override

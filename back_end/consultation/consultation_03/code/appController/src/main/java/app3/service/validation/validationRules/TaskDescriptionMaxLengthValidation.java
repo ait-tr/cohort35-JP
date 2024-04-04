@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 public class TaskDescriptionMaxLengthValidation implements ValidationRule {
     @Override
     public void validate(RequestDto request) {
-        if (request.getDescription() == null) {
-            throw new ValidationException("Task description length must be less than 25, but actual name length is " + request.getName().length());
+        if (request.getDescription().length() > 25) {
+            throw new ValidationException("Task description length must be less than 25, but actual description length is " + request.getDescription().length());
         }
 
     }
