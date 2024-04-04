@@ -1,6 +1,6 @@
-package service.validation.validationRules;
+package app3.service.validation.validationRules;
 
-import dto.RequestDto;
+import app3.dto.RequestDto;
 
 public interface ValidationRule {
     void validate(RequestDto request);

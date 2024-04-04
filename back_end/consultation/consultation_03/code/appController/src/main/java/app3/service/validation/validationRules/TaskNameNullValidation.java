@@ -1,7 +1,8 @@
-package service.validation.validationRules;
+package app3.service.validation.validationRules;
 
-import dto.RequestDto;
-import service.validation.ValidationException;
+
+import app3.dto.RequestDto;
+import app3.service.validation.ValidationException;
 
 public class TaskNameNullValidation implements ValidationRule {
     @Override

@@ -1,6 +1,6 @@
-package dto;
+package app3.dto;
 
-import service.validation.validationRules.CoreError;
+import app3.service.validation.validationRules.CoreError;
 
 import java.util.List;
 

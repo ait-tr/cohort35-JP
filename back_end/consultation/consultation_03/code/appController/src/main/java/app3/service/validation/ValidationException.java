@@ -1,4 +1,4 @@
-package service.validation;
+package app3.service.validation;
 
 public class ValidationException extends RuntimeException{
     public ValidationException(String message) {

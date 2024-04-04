@@ -1,10 +1,10 @@
-package service;
+package app3.service;
 
-import dto.RequestDto;
-import dto.ResponseDto;
-import entity.Task;
-import repository.TaskRepository;
-import service.validation.ValidationService;
+import app3.dto.RequestDto;
+import app3.dto.ResponseDto;
+import app3.entity.Task;
+import app3.repository.TaskRepository;
+import app3.service.validation.ValidationService;
 
 import java.util.Optional;
 

@@ -1,9 +1,8 @@
-package service.validation;
+package app3.service.validation;
 
-import dto.RequestDto;
-import service.validation.validationRules.CoreError;
-import service.validation.validationRules.ValidationRule;
-
+import app3.dto.RequestDto;
+import app3.service.validation.validationRules.ValidationRule;
+import app3.service.validation.validationRules.CoreError;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;

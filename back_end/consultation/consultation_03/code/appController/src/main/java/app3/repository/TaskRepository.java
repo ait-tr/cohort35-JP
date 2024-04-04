@@ -1,7 +1,7 @@
-package repository;
+package app3.repository;
 
-import dto.RequestDto;
-import entity.Task;
+import app3.dto.RequestDto;
+import app3.entity.Task;
 
 import java.util.List;
 import java.util.Optional;

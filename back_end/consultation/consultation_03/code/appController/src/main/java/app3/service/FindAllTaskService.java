@@ -1,10 +1,11 @@
-package service;
+package app3.service;
 
-import dto.ResponseDto;
-import dto.TaskDto;
-import entity.Task;
-import repository.TaskRepository;
-import service.validation.validationRules.CoreError;
+
+import app3.dto.ResponseDto;
+import app3.dto.TaskDto;
+import app3.entity.Task;
+import app3.repository.TaskRepository;
+import app3.service.validation.validationRules.CoreError;
 
 import java.util.ArrayList;
 import java.util.List;

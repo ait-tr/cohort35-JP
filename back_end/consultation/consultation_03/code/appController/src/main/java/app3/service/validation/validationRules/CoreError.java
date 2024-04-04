@@ -1,4 +1,4 @@
-package service.validation.validationRules;
+package app3.service.validation.validationRules;
 
 import java.util.Objects;
 

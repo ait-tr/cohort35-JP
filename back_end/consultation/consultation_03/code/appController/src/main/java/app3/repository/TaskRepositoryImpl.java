@@ -1,14 +1,14 @@
-package repository;
+package app3.repository;
 
-import dto.RequestDto;
-import entity.Task;
+import app3.dto.RequestDto;
+import app3.entity.Task;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-public class TaskRepositoryImpl implements repository.TaskRepository {
+public class TaskRepositoryImpl implements TaskRepository {
 
     private Integer taskIdCounter = 0;
     private List<Task> tasks = new ArrayList<>();

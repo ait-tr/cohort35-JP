@@ -1,4 +1,4 @@
-package dto;
+package app3.dto;
 
 public class TaskDto {
     private String name;
