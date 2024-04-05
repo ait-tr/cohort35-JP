@@ -1,4 +1,4 @@
-package org;
+package jdbc.org;
 
 public class Developer {
 
