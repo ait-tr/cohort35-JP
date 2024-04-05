@@ -1,3 +1,3 @@
 1. JDBC
-2. JPA
+2. JPA, Hibernate
 
