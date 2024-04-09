@@ -1,6 +1,6 @@
-package org.group35springbootproject.dto;
+package org.jpaspringdata.dto;
 
-import org.group35springbootproject.entity.ToDoEntity;
+import org.jpaspringdata.entity.ToDoEntity;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package org.group35springbootproject.dto;
+package org.jpaspringdata.dto;
 
 public class AddToDoRequest {
     private String name;

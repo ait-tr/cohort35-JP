@@ -1,10 +1,13 @@
-package org.group35springbootproject.controller;
+package org.jpaspringdata.controller;
 
-import org.group35springbootproject.dto.AddToDoRequest;
-import org.group35springbootproject.entity.ToDoEntity;
-import org.group35springbootproject.service.AddToDoService;
-import org.group35springbootproject.service.FindAllToDoService;
-import org.group35springbootproject.service.FindToDoById;
+
+import org.jpaspringdata.dto.AddToDoRequest;
+import org.jpaspringdata.entity.ToDoEntity;
+import org.jpaspringdata.service.AddToDoService;
+import org.jpaspringdata.service.FindAllToDoService;
+import org.jpaspringdata.service.FindToDoById;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,17 +26,17 @@ public class ToDoController {
     }
 
     @PostMapping
-    public ToDoEntity add(@RequestBody AddToDoRequest request) {
+    public ResponseEntity<ToDoEntity> add(@RequestBody AddToDoRequest request) {
         return addToDoService.add(request);
     }
 
     @GetMapping
-    public List<ToDoEntity> findAll() {
+    public ResponseEntity<List<ToDoEntity>> findAll() {
         return findAllToDoService.findAll();
     }
 
     @GetMapping(value = "/{idPath}")
-    public ToDoEntity findToDoById(@PathVariable("idPath") Integer id) {
+    public ResponseEntity<ToDoEntity> findToDoById(@PathVariable("idPath") Integer id) {
         return findToDoById.findById(id);
     }
 }

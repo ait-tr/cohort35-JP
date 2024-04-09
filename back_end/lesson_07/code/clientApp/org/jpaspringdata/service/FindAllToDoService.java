@@ -1,7 +1,10 @@
-package org.group35springbootproject.service;
+package org.jpaspringdata.service;
 
-import org.group35springbootproject.entity.ToDoEntity;
-import org.group35springbootproject.repository.ToDoRepository;
+
+import org.jpaspringdata.entity.ToDoEntity;
+import org.jpaspringdata.repository.ToDoRepository;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -16,15 +19,17 @@ public class FindAllToDoService {
         this.repository = repository;
     }
 
-    public List<ToDoEntity> findAll(){
+    public ResponseEntity<List<ToDoEntity>> findAll(){
         List<ToDoEntity> entities = repository.findAll();
         List<String> errors = new ArrayList<>();
 
         if (entities.isEmpty()) {
             errors.add("Our database is empty");
+            return new ResponseEntity<>(entities, HttpStatus.BAD_REQUEST);
+        } else {
+            return new ResponseEntity<>(entities, HttpStatus.OK);
         }
 
-        return entities;
     }
 
 }

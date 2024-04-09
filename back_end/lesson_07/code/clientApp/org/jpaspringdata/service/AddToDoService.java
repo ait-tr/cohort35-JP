@@ -1,8 +1,10 @@
-package org.group35springbootproject.service;
+package org.jpaspringdata.service;
 
-import org.group35springbootproject.dto.AddToDoRequest;
-import org.group35springbootproject.entity.ToDoEntity;
-import org.group35springbootproject.repository.ToDoRepository;
+import org.jpaspringdata.dto.AddToDoRequest;
+import org.jpaspringdata.entity.ToDoEntity;
+import org.jpaspringdata.repository.ToDoRepository;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,12 +16,12 @@ public class AddToDoService {
         this.repository = repository;
     }
 
-    public ToDoEntity add(AddToDoRequest request) {
+    public ResponseEntity<ToDoEntity> add(AddToDoRequest request) {
         System.out.println("Received request: " + request);
         var entityForAdd = convert(request);
         var createdEntity = repository.save(entityForAdd);
         System.out.println("Sending response: " + createdEntity);
-        return createdEntity;
+        return new ResponseEntity<>(createdEntity, HttpStatus.CREATED);
     }
 
     private ToDoEntity convert(AddToDoRequest request){
