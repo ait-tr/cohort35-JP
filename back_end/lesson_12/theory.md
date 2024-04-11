@@ -149,3 +149,141 @@ Swagger - особый инструмент, автоматически доку
 4. **Тестирование API**: Swagger UI обычно также предоставляет возможность прямого тестирования API прямо из документации. Пользователи могут отправлять запросы и просматривать ответы прямо на странице документации.
 
 
+### ---------- ПРИМЕР РАЗРАБОТКИ ПРИЛОЖЕНИЯ --------------------
+
+**Пример: Разработка Приложения для Управления Задачами с использованием REST API**
+
+**Введение:**
+Мы создаем приложение, которое обеспечивает управление задачами пользователей. Это приложение предоставляет функции создания, редактирования, 
+удаления и поиска задач по различным параметрам. Кроме того, оно будет взаимодействовать с пользователем через REST API, возвращая ответы в формате JSON.
+
+**Функционал:**
+- Создание задачи
+- Редактирование задачи
+- Удаление задачи
+- Поиск задачи по названию
+- Поиск задачи по дате
+
+**Описание сущностей:**
+1. **Task (Задача):**
+   - Integer id
+   - String taskName
+   - String taskDescription
+   - LocalDateTime createDate
+   - LocalDateTime deadline
+   - User user
+
+2. **User (Пользователь):**
+   - Integer id
+   - String username
+   - String password
+   - String eMail
+
+**Репозитории:**
+1. TaskRepository
+2. UserRepository
+
+**Описание REST API:**
+
+**Создание новой задачи**
+- Метод: POST
+- URL: createTask
+- Запрос: createTaskRequestDto
+  ```json
+  {
+    "taskName": "Название задачи",
+    "taskDescription": "Описание задачи",
+    "deadline": "Срок выполнения"
+  }
+  ```
+- Ответ: taskResponseDto
+  ```json
+  {
+    "id": "Идентификатор задачи",
+    "taskName": "Название задачи",
+    "taskDescription": "Описание задачи",
+    "createDate": "Дата создания",
+    "deadline": "Срок выполнения",
+    "userId": "Идентификатор пользователя"
+  }
+  ```
+
+**Поиск задачи по имени**
+- Метод: GET
+- URL: /api/tasks?taskName=…
+- Параметр: taskName
+  ```json
+  {
+    "taskName": "Название задачи"
+  }
+  ```
+- Ответ:
+  ```json
+  {
+    "id": "Идентификатор задачи",
+    "taskName": "Название задачи",
+    "taskDescription": "Описание задачи",
+    "createDate": "Дата создания",
+    "deadline": "Срок выполнения",
+    "userId": "Идентификатор пользователя"
+  }
+  ```
+После составления списка запросов, которые будет обрабатывать наше приложение, 
+а также прописания структуры JSON запросов и ответов, мы фактически получили 
+полное понимание структуры необходимых DTO и описание сигнатур сервисных методов, 
+определив их функциональность, входные параметры и ожидаемые результаты.
+
+
+**Сервисы:**
+- Создание новой задачи
+  ```java
+  ResponseEntity<TaskResponseDto> createNewTask(createTaskRequestDto request) {}
+  ```
+
+**CreateTaskRequestDto**
+```json
+{
+  "taskName": "Название задачи",
+  "taskDescription": "Описание задачи",
+  "deadline": "Срок выполнения"
+}
+```
+
+**JSON Пример:**
+```json
+{
+  "taskName": "task1",
+  "taskDescription": "descry 1"
+}
+```
+
+**Валидация данных:**
+```java
+public class User {
+  @NotBlank(message = “Name is mandatory”)
+  private String name;
+
+  @Size(min = 6, max = 15, message = “Password must be between 6 and 15 characters”)
+  private String password;
+}
+```
+
+**Обработка ошибок:**
+```java
+@PostMapping("/users")
+public ResponseEntity<String> createUser(@Valid @RequestBody User user, BindingResult result) {
+  if (result.hasError()) {
+    return ResponseEntity.badRequest().body(“There were errors in the user data”);
+  }
+  // логика записи нового пользователя
+  return ResponseEntity.ok(“User is valid”);
+}
+```
+
+```java
+@PostMapping
+public ResponseEntity<String> createUser(@RequestBody User user) {
+  // логика записи нового пользователя
+  return ResponseEntity.ok(“User is valid”);
+}
+```
