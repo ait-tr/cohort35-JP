@@ -14,15 +14,13 @@ public class PayRoll {
 
     public int monthlyPayment() {
         List<Employee> employees = employeeDB.getAllEmployees();
+        int paymentCounter = 0;
 
-//        for (int i = 0; i < employees.size(); i++) {
-//            bankService.makePayment(employees.get(i).getBankId(), employees.get(i).getSalary());
-//        }
-//
         for (Employee employee : employees) {
             bankService.makePayment(employee.getBankId(),employee.getSalary());
+            paymentCounter++;
         }
 
-        return employees.size();
+        return paymentCounter;
     }
 }
